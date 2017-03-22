@@ -1,0 +1,7 @@
+[Context 0]
+Exe = /home/trinayan/Bench-Configs/m2s-bench-amdsdk-2.5-src/DwtHaar1D/DwtHaar1D_static
+Args =  -x 1000 load /home/trinayan/Bench-Configs/m2s-bench-amdsdk-2.5-src/DwtHaar1D/DwtHaar1D_Kernels.bin
+
+[Context 1]
+Exe = /home/trinayan/Bench-Configs/m2s-bench-spec2006
+Args = --load /home/trinayan/Bench-Configs/m2s-bench-spec2006

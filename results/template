@@ -1,0 +1,7 @@
+[Context 0]
+Exe = /home/trinayan/Bench-Configs/m2s-bench-amdsdk-2.5-src
+Args = --load /home/trinayan/Bench-Configs/m2s-bench-amdsdk-2.5-src
+
+[Context 1]
+Exe = /home/trinayan/Bench-Configs/m2s-bench-spec2006
+Args = --load /home/trinayan/Bench-Configs/m2s-bench-spec2006
