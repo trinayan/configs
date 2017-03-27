@@ -7,43 +7,43 @@ Frequency = 3000
 DefaultInputBufferSize = 102400
 DefaultOutputBufferSize = 102400
 DefaultBandwidth = 16
-FixLatency = 2
+Ideal = true
 
 [ Network.net-x86-l1-1-l2-1 ]
 DefaultInputBufferSize = 102400
 DefaultOutputBufferSize = 102400
 DefaultBandwidth = 16
-FixLatency = 2
+Ideal = true
 
 [ Network.net-x86-l1-2-l2-2 ]
 DefaultInputBufferSize = 102400
 DefaultOutputBufferSize = 102400
 DefaultBandwidth = 16
-FixLatency = 2
+Ideal = true
 
 [ Network.net-x86-l1-3-l2-3 ]
 DefaultInputBufferSize = 102400
 DefaultOutputBufferSize = 102400
 DefaultBandwidth = 16
-FixLatency = 2
+Ideal = true
 
 [ Network.net-si-l1-all-l2-all ]
 DefaultInputBufferSize = 102400 
 DefaultOutputBufferSize = 102400
 DefaultBandwidth = 32 
-FixLatency = 2
+Ideal = true
 
 [ Network.net-l2-l3 ]
 DefaultInputBufferSize = 102400
 DefaultOutputBufferSize = 102400
 DefaultBandwidth = 32
-FixLatency = 2
+Ideal = true
 
 [ Network.net-l3-mm ]
 DefaultInputBufferSize = 102400
 DefaultOutputBufferSize = 102400
 DefaultBandwidth = 32
-FixLatency = 2
+Ideal = true
 
 ; L3-mm nodes
 

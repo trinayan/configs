@@ -2,4 +2,4 @@
 Frequency = 3000
 Cores = 1
 Threads = 1
-FastForward = 19200000000
+FastForward = 1000

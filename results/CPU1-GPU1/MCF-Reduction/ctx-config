@@ -1,0 +1,7 @@
+[Context 0]
+Exe = /root/Research/Bench-Configs/m2s-bench-amdsdk-2.5-src/Reduction/Reduction_static
+Args = --load /root/Research/Bench-Configs/m2s-bench-amdsdk-2.5-src/Reduction/Reduction_Kernels.bin -q
+
+[Context 1]
+Exe = /root/Research/Bench-Configs/m2s-bench-spec2006/429.mcf/mcf_base.i386
+Args = /root/Research/Bench-Configs/m2s-bench-spec2006/429.mcf/inp.in

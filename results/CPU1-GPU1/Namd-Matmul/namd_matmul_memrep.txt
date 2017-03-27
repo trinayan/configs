@@ -1,0 +1,1547 @@
+; Report for caches, TLBs, and main memory
+;    Accesses - Total number of accesses - Reads, Writes, and NCWrites (non-coherent) 
+;    Hits, Misses - Accesses resulting in hits/misses
+;    HitRatio - Hits divided by accesses
+;    Evictions - Invalidated or replaced cache blocks
+;    Retries - For L1 caches, accesses that were retried
+;    ReadRetries, WriteRetries, NCWriteRetries - Read/Write retried accesses
+;    Reads, Writes, NCWrites - Total read/write accesses
+;    BlockingReads, BlockingWrites, BlockingNCWrites - Reads/writes coming from lower-level cache
+;    NonBlockingReads, NonBlockingWrites, NonBlockingNCWrites - Coming from upper-level cache
+
+
+[ mod-shared-mm ]
+
+BlockSize = 64
+DataLatency = 40
+Ports = 2
+
+Accesses = 90664
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 0
+Misses = 90664
+HitRatio = 0
+
+Reads = 90640
+CoalescedReads = 0
+ReadHits = 0
+ReadMisses = 90640
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 90640
+
+Writes = 24
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 24
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 24
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+
+
+[ mod-shared-l3 ]
+
+Sets = 8192
+Ways = 16
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 20
+Ports = 2
+
+Accesses = 888939
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 885001
+No of CPU blocks evicted by GPU = 0 
+Hits = 360699
+Misses = 528240
+HitRatio = 0.4058
+
+Reads = 449348
+CoalescedReads = 0
+ReadHits = 358708
+ReadMisses = 90640
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 449348
+
+Writes = 2015
+CoalescedWrites = 0
+WriteHits = 1991
+WriteMisses = 24
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 2015
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 86
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-x86-l2-0 ]
+
+Sets = 512
+Ways = 8
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 88798
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 42341
+Misses = 46457
+HitRatio = 0.4768
+
+Reads = 41355
+CoalescedReads = 0
+ReadHits = 39518
+ReadMisses = 1837
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 41355
+
+Writes = 2863
+CoalescedWrites = 0
+WriteHits = 2823
+WriteMisses = 40
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 2863
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 107
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-x86-l2-1 ]
+
+Sets = 512
+Ways = 8
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 0
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 0
+Misses = 0
+HitRatio = 0
+
+Reads = 0
+CoalescedReads = 0
+ReadHits = 0
+ReadMisses = 0
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-x86-l2-2 ]
+
+Sets = 512
+Ways = 8
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 0
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 0
+Misses = 0
+HitRatio = 0
+
+Reads = 0
+CoalescedReads = 0
+ReadHits = 0
+ReadMisses = 0
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-x86-l2-3 ]
+
+Sets = 512
+Ways = 8
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 0
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 0
+Misses = 0
+HitRatio = 0
+
+Reads = 0
+CoalescedReads = 0
+ReadHits = 0
+ReadMisses = 0
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-si-l2-0 ]
+
+Sets = 512
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 1074118
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 110974
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 418602
+Misses = 655516
+HitRatio = 0.3897
+
+Reads = 532027
+CoalescedReads = 0
+ReadHits = 418602
+ReadMisses = 113425
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 532027
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 10594
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 110974
+
+
+[ mod-si-l2-1 ]
+
+Sets = 512
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 1064345
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 109650
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 415573
+Misses = 648772
+HitRatio = 0.3904
+
+Reads = 527692
+CoalescedReads = 0
+ReadHits = 415573
+ReadMisses = 112119
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 527692
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 9512
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 109650
+
+
+[ mod-si-l2-2 ]
+
+Sets = 512
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 1055075
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 108559
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 411922
+Misses = 643153
+HitRatio = 0.3904
+
+Reads = 523001
+CoalescedReads = 0
+ReadHits = 411922
+ReadMisses = 111079
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 523001
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 9622
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 108559
+
+
+[ mod-si-l2-3 ]
+
+Sets = 512
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 1046273
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 108307
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 407893
+Misses = 638380
+HitRatio = 0.3899
+
+Reads = 518781
+CoalescedReads = 0
+ReadHits = 407893
+ReadMisses = 110888
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 518781
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 9238
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 108307
+
+
+[ mod-x86-l1-0-data ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 1936948
+CoalescedAccesses = 139789
+RetriedAccesses = 187
+Evictions = 41630
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 1892644
+Misses = 44304
+HitRatio = 0.9771
+
+Reads = 1385936
+CoalescedReads = 109199
+ReadHits = 1344652
+ReadMisses = 41284
+ReadRetries = 1
+ReadRetryHits = 0
+ReadRetryMisses = 1
+BlockingReads = 1385936
+NonBlockingReads = 0
+
+Writes = 548851
+CoalescedWrites = 30590
+WriteHits = 547992
+WriteMisses = 859
+WriteRetries = 186
+WriteRetryHits = 186
+WriteRetryMisses = 0
+BlockingWrites = 548851
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 35
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 41631
+
+
+[ mod-x86-l1-0-inst ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 360604
+CoalescedAccesses = 8
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 360492
+Misses = 112
+HitRatio = 0.9997
+
+Reads = 360564
+CoalescedReads = 8
+ReadHits = 360492
+ReadMisses = 72
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 360564
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-x86-l1-1-data ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 0
+Misses = 0
+HitRatio = 0
+
+Reads = 0
+CoalescedReads = 0
+ReadHits = 0
+ReadMisses = 0
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-x86-l1-1-inst ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 0
+Misses = 0
+HitRatio = 0
+
+Reads = 0
+CoalescedReads = 0
+ReadHits = 0
+ReadMisses = 0
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-x86-l1-2-data ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 0
+Misses = 0
+HitRatio = 0
+
+Reads = 0
+CoalescedReads = 0
+ReadHits = 0
+ReadMisses = 0
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-x86-l1-2-inst ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 0
+Misses = 0
+HitRatio = 0
+
+Reads = 0
+CoalescedReads = 0
+ReadHits = 0
+ReadMisses = 0
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-x86-l1-3-data ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 0
+Misses = 0
+HitRatio = 0
+
+Reads = 0
+CoalescedReads = 0
+ReadHits = 0
+ReadMisses = 0
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ mod-x86-l1-3-inst ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CoalescedAccesses = 0
+RetriedAccesses = 0
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 0
+Misses = 0
+HitRatio = 0
+
+Reads = 0
+CoalescedReads = 0
+ReadHits = 0
+ReadMisses = 0
+ReadRetries = 0
+ReadRetryHits = 0
+ReadRetryMisses = 0
+BlockingReads = 0
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 0
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ si-vec-l1-cu00 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 740788
+CoalescedAccesses = 3109188
+RetriedAccesses = 21574
+Evictions = 254741
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 432
+Misses = 740356
+HitRatio = 0.0005832
+
+Reads = 260285
+CoalescedReads = 3105348
+ReadHits = 432
+ReadMisses = 259853
+ReadRetries = 5697
+ReadRetryHits = 0
+ReadRetryMisses = 5697
+BlockingReads = 260285
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 1280
+CoalescedNCWrites = 3840
+NCWriteHits = 0
+NCWriteMisses = 1280
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 1280
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 465500
+RetryDirectoryEntryConflicts = 15877
+ConflictInvalidation = 259723
+
+
+[ si-vec-l1-cu01 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 741044
+CoalescedAccesses = 3094348
+RetriedAccesses = 22676
+Evictions = 253353
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 416
+Misses = 740628
+HitRatio = 0.0005614
+
+Reads = 259068
+CoalescedReads = 3090508
+ReadHits = 416
+ReadMisses = 258652
+ReadRetries = 6024
+ReadRetryHits = 0
+ReadRetryMisses = 6024
+BlockingReads = 259068
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 1284
+CoalescedNCWrites = 3840
+NCWriteHits = 0
+NCWriteMisses = 1284
+NCWriteRetries = 4
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 4
+BlockingNCWrites = 1284
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 465674
+RetryDirectoryEntryConflicts = 16648
+ConflictInvalidation = 258652
+
+
+[ si-vec-l1-cu02 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 736310
+CoalescedAccesses = 3322017
+RetriedAccesses = 8980
+Evictions = 277855
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 229
+Misses = 736081
+HitRatio = 0.000311
+
+Reads = 279296
+CoalescedReads = 3317409
+ReadHits = 229
+ReadMisses = 279067
+ReadRetries = 2465
+ReadRetryHits = 0
+ReadRetryMisses = 2465
+BlockingReads = 279296
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 1536
+CoalescedNCWrites = 4608
+NCWriteHits = 0
+NCWriteMisses = 1536
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 1536
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 445850
+RetryDirectoryEntryConflicts = 6515
+ConflictInvalidation = 280055
+
+
+[ si-vec-l1-cu03 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 757413
+CoalescedAccesses = 3296521
+RetriedAccesses = 9313
+Evictions = 271065
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 375
+Misses = 757038
+HitRatio = 0.0004951
+
+Reads = 272744
+CoalescedReads = 3292105
+ReadHits = 375
+ReadMisses = 272369
+ReadRetries = 2481
+ReadRetryHits = 0
+ReadRetryMisses = 2481
+BlockingReads = 272744
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 1472
+CoalescedNCWrites = 4416
+NCWriteHits = 0
+NCWriteMisses = 1472
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 1472
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 473122
+RetryDirectoryEntryConflicts = 6832
+ConflictInvalidation = 273344
+
+
+[ si-vec-l1-cu04 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 742584
+CoalescedAccesses = 3241188
+RetriedAccesses = 15759
+Evictions = 269235
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 319
+Misses = 742265
+HitRatio = 0.0004296
+
+Reads = 272812
+CoalescedReads = 3236868
+ReadHits = 319
+ReadMisses = 272493
+ReadRetries = 4272
+ReadRetryHits = 0
+ReadRetryMisses = 4272
+BlockingReads = 272812
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 1440
+CoalescedNCWrites = 4320
+NCWriteHits = 0
+NCWriteMisses = 1440
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 1440
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 456200
+RetryDirectoryEntryConflicts = 11487
+ConflictInvalidation = 272956
+
+
+[ si-vec-l1-cu05 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 733854
+CoalescedAccesses = 3157706
+RetriedAccesses = 21602
+Evictions = 261926
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 340
+Misses = 733514
+HitRatio = 0.0004633
+
+Reads = 267320
+CoalescedReads = 3153866
+ReadHits = 340
+ReadMisses = 266980
+ReadRetries = 5826
+ReadRetryHits = 0
+ReadRetryMisses = 5826
+BlockingReads = 267320
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 1280
+CoalescedNCWrites = 3840
+NCWriteHits = 0
+NCWriteMisses = 1280
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 1280
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 450085
+RetryDirectoryEntryConflicts = 15776
+ConflictInvalidation = 267044
+
+
+[ si-vec-l1-cu06 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 724102
+CoalescedAccesses = 3076288
+RetriedAccesses = 21572
+Evictions = 253650
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 395
+Misses = 723707
+HitRatio = 0.0005455
+
+Reads = 259297
+CoalescedReads = 3072448
+ReadHits = 395
+ReadMisses = 258902
+ReadRetries = 5921
+ReadRetryHits = 0
+ReadRetryMisses = 5921
+BlockingReads = 259297
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 1284
+CoalescedNCWrites = 3840
+NCWriteHits = 0
+NCWriteMisses = 1284
+NCWriteRetries = 4
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 4
+BlockingNCWrites = 1284
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 448980
+RetryDirectoryEntryConflicts = 15647
+ConflictInvalidation = 258831
+
+
+[ si-vec-l1-cu07 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 742601
+CoalescedAccesses = 3118031
+RetriedAccesses = 22705
+Evictions = 255545
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 454
+Misses = 742147
+HitRatio = 0.0006114
+
+Reads = 261373
+CoalescedReads = 3114191
+ReadHits = 454
+ReadMisses = 260919
+ReadRetries = 6092
+ReadRetryHits = 0
+ReadRetryMisses = 6092
+BlockingReads = 261373
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 1281
+CoalescedNCWrites = 3840
+NCWriteHits = 0
+NCWriteMisses = 1281
+NCWriteRetries = 1
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 1
+BlockingNCWrites = 1281
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 464655
+RetryDirectoryEntryConflicts = 16612
+ConflictInvalidation = 260903
+
+
+[ si-scalar-l1-0 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 1261
+CoalescedAccesses = 1173
+RetriedAccesses = 6
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 1023
+Misses = 238
+HitRatio = 0.8113
+
+Reads = 1143
+CoalescedReads = 1173
+ReadHits = 1023
+ReadMisses = 120
+ReadRetries = 6
+ReadRetryHits = 0
+ReadRetryMisses = 6
+BlockingReads = 1143
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 3
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+
+[ si-scalar-l1-1 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 1188
+CoalescedAccesses = 1168
+RetriedAccesses = 16
+Evictions = 0
+GPU L3 cache access = 0
+No of CPU blocks evicted by GPU = 0 
+Hits = 1011
+Misses = 177
+HitRatio = 0.851
+
+Reads = 1109
+CoalescedReads = 1168
+ReadHits = 1011
+ReadMisses = 98
+ReadRetries = 16
+ReadRetryHits = 0
+ReadRetryMisses = 16
+BlockingReads = 1109
+NonBlockingReads = 0
+
+Writes = 0
+CoalescedWrites = 0
+WriteHits = 0
+WriteMisses = 0
+WriteRetries = 0
+WriteRetryHits = 0
+WriteRetryMisses = 0
+BlockingWrites = 0
+NonBlockingWrites = 0
+
+NCWrites = 0
+CoalescedNCWrites = 0
+NCWriteHits = 0
+NCWriteMisses = 0
+NCWriteRetries = 0
+NCWriteRetryHits = 0
+NCWriteRetryMisses = 0
+BlockingNCWrites = 0
+NonBlockingNCWrites = 0
+
+DirectoryEntryConflicts = 1
+RetryDirectoryEntryConflicts = 0
+ConflictInvalidation = 0
+
+

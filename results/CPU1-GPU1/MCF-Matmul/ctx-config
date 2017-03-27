@@ -1,7 +1,7 @@
 [Context 0]
-Exe = /home/trinayan/Bench-Configs/m2s-bench-amdsdk-2.5-src/MatrixMultiplication/MatrixMultiplication_static
-Args = -x 1024 -y 1024 -z 1024 --load /home/trinayan/Bench-Configs/m2s-bench-amdsdk-2.5-src/MatrixMultiplication/MatrixMultiplication_Kernels.bin -q
+Exe = /root/Research/Bench-Configs/m2s-bench-amdsdk-2.5-src/MatrixMultiplication/MatrixMultiplication_static
+Args = -x 4096 -y 4096 -z 4096 --load /root/Research/Bench-Configs/m2s-bench-amdsdk-2.5-src/MatrixMultiplication/MatrixMultiplication_Kernels.bin -q
 
 [Context 1]
-Exe = /home/trinayan/Bench-Configs/m2s-bench-spec2006/429.mcf/mcf_base.i386
-Args = /home/trinayan/Bench-Configs/m2s-bench-spec2006/429.mcf/inp.in
+Exe = /root/Research/Bench-Configs/m2s-bench-spec2006/429.mcf/mcf_base.i386
+Args = /root/Research/Bench-Configs/m2s-bench-spec2006/429.mcf/inp.in

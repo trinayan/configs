@@ -1,0 +1,569 @@
+; Report for caches, TLBs, and main memory
+;    Accesses - Total number of accesses - Reads, Writes, and NCWrites (non-coherent) 
+;    Hits, Misses - Accesses resulting in hits/misses
+;    HitRatio - Hits divided by accesses
+;    Evictions - Invalidated or replaced cache blocks
+;    Retries - For L1 caches, accesses that were retried
+;    ReadRetries, WriteRetries, NCWriteRetries - Read/Write retried accesses
+;    Reads, Writes, NCWrites - Total read/write accesses
+;    BlockingReads, BlockingWrites, BlockingNCWrites - Reads/writes coming from lower-level cache
+;    NonBlockingReads, NonBlockingWrites, NonBlockingNCWrites - Coming from upper-level cache
+
+
+[ mod-shared-mm ]
+
+BlockSize = 64
+DataLatency = 40
+Ports = 2
+
+Accesses = 7735595
+CPU Accesses = 528438
+GPU Accesses = 7207016
+CPU Hits = 5620
+GPU Hits = 3980
+CPU Misses = 522818
+GPU Misses = 7203036
+
+
+
+[ mod-shared-l3 ]
+
+Sets = 8192
+Ways = 16
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 20
+Ports = 2
+
+Accesses = 13065912
+CPU Accesses = 898177
+GPU Accesses = 12167485
+No of CPU blocks evicted by GPU = 185717 
+CPU Hits = 41000
+GPU Hits = 112290
+CPU Misses = 857177
+GPU Misses = 12055195
+
+
+
+[ mod-x86-l2-0 ]
+
+Sets = 512
+Ways = 8
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 881336
+CPU Accesses = 815724
+GPU Accesses = 65533
+CPU Hits = 31531
+GPU Hits = 0
+CPU Misses = 784193
+GPU Misses = 65533
+
+
+
+[ mod-x86-l2-1 ]
+
+Sets = 512
+Ways = 8
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 0
+CPU Accesses = 0
+GPU Accesses = 0
+CPU Hits = 0
+GPU Hits = 0
+CPU Misses = 0
+GPU Misses = 0
+
+
+
+[ mod-x86-l2-2 ]
+
+Sets = 512
+Ways = 8
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 0
+CPU Accesses = 0
+GPU Accesses = 0
+CPU Hits = 0
+GPU Hits = 0
+CPU Misses = 0
+GPU Misses = 0
+
+
+
+[ mod-x86-l2-3 ]
+
+Sets = 512
+Ways = 8
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 0
+CPU Accesses = 0
+GPU Accesses = 0
+CPU Hits = 0
+GPU Hits = 0
+CPU Misses = 0
+GPU Misses = 0
+
+
+
+[ mod-si-l2-0 ]
+
+Sets = 512
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 11672968
+CPU Accesses = 4994
+GPU Accesses = 11567058
+CPU Hits = 0
+GPU Hits = 4546354
+CPU Misses = 4994
+GPU Misses = 7020704
+
+
+
+[ mod-si-l2-1 ]
+
+Sets = 512
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 11664063
+CPU Accesses = 4729
+GPU Accesses = 11559821
+CPU Hits = 0
+GPU Hits = 4547813
+CPU Misses = 4729
+GPU Misses = 7012008
+
+
+
+[ mod-si-l2-2 ]
+
+Sets = 512
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 11655817
+CPU Accesses = 5157
+GPU Accesses = 11549770
+CPU Hits = 0
+GPU Hits = 4548366
+CPU Misses = 5157
+GPU Misses = 7001404
+
+
+
+[ mod-si-l2-3 ]
+
+Sets = 512
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 4
+Ports = 2
+
+Accesses = 11644009
+CPU Accesses = 5886
+GPU Accesses = 11539713
+CPU Hits = 0
+GPU Hits = 4544217
+CPU Misses = 5886
+GPU Misses = 6995496
+
+
+
+[ mod-x86-l1-0-data ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 5339861
+CPU Accesses = 5329125
+GPU Accesses = 10589
+CPU Hits = 4925532
+GPU Hits = 0
+CPU Misses = 403593
+GPU Misses = 10589
+
+
+
+[ mod-x86-l1-0-inst ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 1690383
+CPU Accesses = 1690111
+GPU Accesses = 272
+CPU Hits = 1688950
+GPU Hits = 0
+CPU Misses = 1161
+GPU Misses = 272
+
+
+
+[ mod-x86-l1-1-data ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CPU Accesses = 0
+GPU Accesses = 0
+CPU Hits = 0
+GPU Hits = 0
+CPU Misses = 0
+GPU Misses = 0
+
+
+
+[ mod-x86-l1-1-inst ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CPU Accesses = 0
+GPU Accesses = 0
+CPU Hits = 0
+GPU Hits = 0
+CPU Misses = 0
+GPU Misses = 0
+
+
+
+[ mod-x86-l1-2-data ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CPU Accesses = 0
+GPU Accesses = 0
+CPU Hits = 0
+GPU Hits = 0
+CPU Misses = 0
+GPU Misses = 0
+
+
+
+[ mod-x86-l1-2-inst ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CPU Accesses = 0
+GPU Accesses = 0
+CPU Hits = 0
+GPU Hits = 0
+CPU Misses = 0
+GPU Misses = 0
+
+
+
+[ mod-x86-l1-3-data ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CPU Accesses = 0
+GPU Accesses = 0
+CPU Hits = 0
+GPU Hits = 0
+CPU Misses = 0
+GPU Misses = 0
+
+
+
+[ mod-x86-l1-3-inst ]
+
+Sets = 256
+Ways = 2
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 0
+CPU Accesses = 0
+GPU Accesses = 0
+CPU Hits = 0
+GPU Hits = 0
+CPU Misses = 0
+GPU Misses = 0
+
+
+
+[ si-vec-l1-cu00 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 7591199
+CPU Accesses = 254
+GPU Accesses = 3122097
+CPU Hits = 0
+GPU Hits = 1870
+CPU Misses = 254
+GPU Misses = 3120227
+
+
+
+[ si-vec-l1-cu01 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 7566751
+CPU Accesses = 232
+GPU Accesses = 3113773
+CPU Hits = 0
+GPU Hits = 1876
+CPU Misses = 232
+GPU Misses = 3111897
+
+
+
+[ si-vec-l1-cu02 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 7496850
+CPU Accesses = 278
+GPU Accesses = 3120987
+CPU Hits = 0
+GPU Hits = 1386
+CPU Misses = 278
+GPU Misses = 3119601
+
+
+
+[ si-vec-l1-cu03 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 7599339
+CPU Accesses = 269
+GPU Accesses = 3117356
+CPU Hits = 0
+GPU Hits = 2152
+CPU Misses = 269
+GPU Misses = 3115204
+
+
+
+[ si-vec-l1-cu04 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 7546978
+CPU Accesses = 225
+GPU Accesses = 3091730
+CPU Hits = 0
+GPU Hits = 1839
+CPU Misses = 225
+GPU Misses = 3089891
+
+
+
+[ si-vec-l1-cu05 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 7543863
+CPU Accesses = 256
+GPU Accesses = 3097277
+CPU Hits = 0
+GPU Hits = 1629
+CPU Misses = 256
+GPU Misses = 3095648
+
+
+
+[ si-vec-l1-cu06 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 7523837
+CPU Accesses = 276
+GPU Accesses = 3124994
+CPU Hits = 0
+GPU Hits = 1631
+CPU Misses = 276
+GPU Misses = 3123363
+
+
+
+[ si-vec-l1-cu07 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 7629108
+CPU Accesses = 257
+GPU Accesses = 3092006
+CPU Hits = 0
+GPU Hits = 2352
+CPU Misses = 257
+GPU Misses = 3089654
+
+
+
+[ si-scalar-l1-0 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 3376
+CPU Accesses = 0
+GPU Accesses = 3371
+CPU Hits = 0
+GPU Hits = 2638
+CPU Misses = 0
+GPU Misses = 733
+
+
+
+[ si-scalar-l1-1 ]
+
+Sets = 16
+Ways = 4
+ReplacementPolicy = LRU
+WritePolicy = WriteBack
+BlockSize = 64
+DataLatency = 1
+Ports = 2
+
+Accesses = 3347
+CPU Accesses = 0
+GPU Accesses = 3346
+CPU Hits = 0
+GPU Hits = 2582
+CPU Misses = 0
+GPU Misses = 764
+
+
+
